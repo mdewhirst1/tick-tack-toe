@@ -37,7 +37,7 @@
 }
 
 
-td {
+#board td {
 	font-size: 40px;
 	/*padding-left: 20px;*/
 	width: 100px;
@@ -46,6 +46,17 @@ td {
 	text-align: center;
 	color: white;
 	border-radius: 25px;
+}
+
+#scoreBoard table {
+    border-collapse: collapse;
+}
+
+#scoreBoard td {
+	border: 2px solid black;
+	margin: 0px;
+	text-align: center;
+	padding: 0px 10px;
 }
 
 #winner {
@@ -57,14 +68,14 @@ td {
 @keyframes winParty {
 	0% {
 		color: red;
-		font-size: 250px;
+		font-size: 100px;
 	}
 	50% {
 		color: blue;
-		font-size: 150px;
+		font-size: 50px;
 	}
 	100% {
 		color: red;
-		font-size: 250px;
+		font-size: 100px;
 	} 
 }

@@ -1,11 +1,13 @@
 window.onload = function(){
-	var buttons = Array.from(document.getElementsByTagName("td"));
+	var buttons = Array.from(document.getElementById("board").getElementsByTagName("td"));
 	var reset = document.getElementById("reset");
 	var turnCounter = 1;
 	var board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
 	var inPlay = true;
 	var player1 = "X";
 	var player2 = "O";
+	var player1Score = 0;
+	var player2Score = 0;
 	var curPlayer = player1;
 
 	reset.addEventListener("click", function(event) {
@@ -27,6 +29,7 @@ window.onload = function(){
 				if (checkWin(this.id)) {
 					inPlay = false;
 					displayWinner("CONGRATZ PLAYER " + curPlayer);
+					updateScore();
 				}
 				else{
 					changePlayer();
@@ -119,6 +122,19 @@ window.onload = function(){
 		else {
 			if (curPlayer == player2) {
 				curPlayer = player1;
+			}
+		}
+	}
+
+	function updateScore() {
+		if (curPlayer == player1) {
+			player1Score++;
+			document.getElementById("player1Score").innerText = player1Score;
+		} 
+		else {
+			if (curPlayer == player2) {
+				player2Score++;
+				document.getElementById("player2Score").innerText = player2Score;
 			}
 		}
 	}
