@@ -1,8 +1,19 @@
 window.onload = function(){
 	var buttons = Array.from(document.getElementsByTagName("td"));
+	var reset = document.getElementById("reset");
 	var turnCounter = 1;
 	var board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
 	var inPlay = true;
+
+	reset.addEventListener("click", function(event) {
+		turnCounter = 1;
+		board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
+		inPlay = true;
+		displayWinner("");
+		buttons.forEach(function(button){
+			button.innerText = "";
+		})
+	});
 
 	buttons.forEach(function(button) {
 		button.addEventListener("click", function(event) {
@@ -11,7 +22,7 @@ window.onload = function(){
 	    		updateBoard(getRow(this.id), getColumn(this.id));
 	    		if (checkWin(this.id)) {
 	    			inPlay = false;
-	    			displayWinner();
+	    			displayWinner("YOU WIN!1!");
 	    		}
 			}
 
@@ -92,8 +103,8 @@ window.onload = function(){
 		}
 	}
 
-	function displayWinner() {
-		document.getElementById("winner").innerText = "YOU WIN!";
+	function displayWinner(message) {
+		document.getElementById("winner").innerText = message;
 	}
 };
 
