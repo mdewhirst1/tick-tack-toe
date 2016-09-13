@@ -21,3 +21,9 @@ td {
 	height: 100px;
 	background-color: red;
 }
+
+#winner {
+	font-size: 350px;
+	animation: party 1s ease infinite;
+	
+}
