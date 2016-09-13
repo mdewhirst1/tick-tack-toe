@@ -4,6 +4,9 @@ window.onload = function(){
 	var turnCounter = 1;
 	var board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
 	var inPlay = true;
+	var player1 = "X";
+	var player2 = "O";
+	var curPlayer = player1;
 
 	reset.addEventListener("click", function(event) {
 		turnCounter = 1;
@@ -13,20 +16,22 @@ window.onload = function(){
 		buttons.forEach(function(button){
 			button.innerText = "";
 		})
+		curPlayer = player1;
 	});
 
 	buttons.forEach(function(button) {
 		button.addEventListener("click", function(event) {
 			
 			if (inPlay) {
-	    		updateBoard(getRow(this.id), getColumn(this.id));
-	    		if (checkWin(this.id)) {
-	    			inPlay = false;
-	    			displayWinner("YOU WIN!1!");
-	    		}
+				updateBoard(getRow(this.id), getColumn(this.id));
+				if (checkWin(this.id)) {
+					inPlay = false;
+					displayWinner("CONGRATZ PLAYER " + curPlayer);
+				}
+				else{
+					changePlayer();
+				}
 			}
-
-
 		});
 	});
 
@@ -105,6 +110,17 @@ window.onload = function(){
 
 	function displayWinner(message) {
 		document.getElementById("winner").innerText = message;
+	}
+
+	function changePlayer() {
+		if (curPlayer == player1) {
+			curPlayer = player2;
+		} 
+		else {
+			if (curPlayer == player2) {
+				curPlayer = player1;
+			}
+		}
 	}
 };
 
