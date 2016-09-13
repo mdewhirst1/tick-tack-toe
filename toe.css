@@ -102,3 +102,11 @@
 		transform: rotate(360deg);
 	} 
 }
+
+#playerNames p {
+	display: inline-block;
+}
+
+#playerNames input {
+	display: inline-block;
+}

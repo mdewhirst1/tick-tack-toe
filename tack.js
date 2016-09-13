@@ -9,6 +9,9 @@ window.onload = function(){
 	var player1Score = 0;
 	var player2Score = 0;
 	var curPlayer = player1;
+	var setPlay1Button = document.getElementById("setPlayer1");
+	var setPlay2Button = document.getElementById("setPlayer2");
+
 
 	reset.addEventListener("click", function(event) {
 		turnCounter = 1;
@@ -22,6 +25,17 @@ window.onload = function(){
 		curPlayer = player1;
 	});
 
+
+	setPlay1Button.addEventListener("click", function(event) {
+		player1 = document.getElementById("player1").value;
+		console.log(player1);
+	})
+
+	setPlay2Button.addEventListener("click", function(event) {
+		player2 = document.getElementById("player2").value;
+		console.log(player2);
+	})
+
 	buttons.forEach(function(button) {
 		button.addEventListener("click", function(event) {
 			
@@ -30,10 +44,13 @@ window.onload = function(){
 				if (checkWin(this.id)) {
 					inPlay = false;
 					displayWinner("CONGRATZ PLAYER " + curPlayer);
+					console.log(curPlayer);
 					updateScore();
 				}
 				else{
 					changePlayer();
+					console.log(curPlayer);
+					
 				}
 			}
 		});
@@ -120,6 +137,7 @@ window.onload = function(){
 	}
 
 	function changePlayer() {
+		// use ternary
 		if (curPlayer == player1) {
 			curPlayer = player2;
 		} 
