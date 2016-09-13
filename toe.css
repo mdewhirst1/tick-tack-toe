@@ -2,6 +2,10 @@
 	animation: party 1s ease infinite;
 }
 
+#party2{
+	animation: partyBorder 1s ease infinite;
+}
+
 @keyframes party {
 	0% {
     	color: red; 
@@ -14,6 +18,25 @@
 	} 
 }
 
+@keyframes partyBorder {
+	0%{
+		border: 2px dotted red; 
+	}
+	25% {
+		border: 2px dashed blue; 
+	}
+	50% {
+		border: 2px dotted red; 
+	}
+	75% {
+		border: 2px dashed blue; 
+	}
+	100% {
+		border: 2px dotted red; 
+	} 
+}
+
+
 td {
 	font-size: 40px;
 	/*padding-left: 20px;*/
@@ -23,7 +46,22 @@ td {
 }
 
 #winner {
-	font-size: 350px;
-	animation: party 1s ease infinite;
 	
+	animation: winParty 1s linear infinite;
+	
+}
+
+@keyframes winParty {
+	0% {
+		color: red;
+		font-size: 250px;
+	}
+	50% {
+		color: blue;
+		font-size: 150px;
+	}
+	100% {
+		color: red;
+		font-size: 250px;
+	} 
 }
