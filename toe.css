@@ -69,3 +69,11 @@ td {
 		font-size: 250px;
 	} 
 }
+
+#playerNames p {
+	display: inline-block;
+}
+
+#playerNames input {
+	display: inline-block;
+}
