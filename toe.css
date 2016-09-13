@@ -13,3 +13,11 @@
 		color: red;
 	} 
 }
+
+td {
+	font-size: 40px;
+	/*padding-left: 20px;*/
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
