@@ -17,6 +17,7 @@ window.onload = function(){
 		displayWinner("");
 		buttons.forEach(function(button){
 			button.innerText = "";
+			button.className = "";
 		})
 		curPlayer = player1;
 	});
@@ -113,6 +114,9 @@ window.onload = function(){
 
 	function displayWinner(message) {
 		document.getElementById("winner").innerText = message;
+		buttons.forEach(function(button) {
+			button.className = "boardWin";
+		});
 	}
 
 	function changePlayer() {
