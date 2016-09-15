@@ -1,6 +1,6 @@
 window.onload = function(){
 	var buttons = Array.from(document.getElementById("board").getElementsByTagName("td"));
-	var reset = document.getElementById("reset");
+	var reset = document.getElementById("resetBtn");
 	var turnCounter = 1;
 	var board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
 	var inPlay = true;
@@ -14,6 +14,7 @@ window.onload = function(){
 
 
 	reset.addEventListener("click", function(event) {
+		//reset values to default
 		turnCounter = 1;
 		board = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]];
 		inPlay = true;
@@ -54,7 +55,7 @@ window.onload = function(){
 					updateScore();
 				}
 				//else player has not won so switch player
-				else{
+				else {
 					changePlayer();
 					console.log(curPlayer);
 					
@@ -101,7 +102,9 @@ window.onload = function(){
 
 	function checkWin(position) {
 		//check if player has won
-		if (checkRow(getRow(position))) {
+		var row = getRow(position);
+
+		if (checkRow(row)) {
 			return true;
 		}
 		else if (checkColumn(getColumn(position))) {
@@ -179,13 +182,11 @@ window.onload = function(){
 			//update page
 			document.getElementById("player1Score").innerText = player1Score;
 		} 
-		else {
-			if (curPlayer == player2) {
-				//update score
-				player2Score++;
-				//update page
-				document.getElementById("player2Score").innerText = player2Score;
-			}
+		else if (curPlayer == player2) {
+			//update score
+			player2Score++;
+			//update page
+			document.getElementById("player2Score").innerText = player2Score;
 		}
 	}
 };

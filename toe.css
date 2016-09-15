@@ -2,10 +2,6 @@
 	animation: party 1s ease infinite;
 }
 
-#party2{
-	animation: partyBorder 1s ease infinite;
-}
-
 @keyframes party {
 	0% {
     	color: red; 
@@ -16,6 +12,10 @@
 	100% {
 		color: red;
 	} 
+}
+
+#party2{
+	animation: partyBorder 1s ease infinite;
 }
 
 @keyframes partyBorder {
@@ -36,6 +36,9 @@
 	} 
 }
 
+#board table {
+	float: left;
+}
 
 #board td {
 	font-size: 40px;
@@ -53,38 +56,6 @@
 	animation: winPartyTable 1s ease infinite;
 }
 
-#scoreBoard table {
-    border-collapse: collapse;
-}
-
-#scoreBoard td {
-	border: 2px solid black;
-	margin: 0px;
-	text-align: center;
-	padding: 0px 10px;
-}
-
-#winner {
-	
-	animation: winParty 1s linear infinite;
-	
-}
-
-@keyframes winParty {
-	0% {
-		color: red;
-		font-size: 100px;
-	}
-	50% {
-		color: blue;
-		font-size: 50px;
-	}
-	100% {
-		color: red;
-		font-size: 100px;
-	} 
-}
-
 @keyframes winPartyTable {
 	0% {
 		background-color: red;
@@ -100,6 +71,46 @@
 		background-color: red;
 		border-radius: 25px;
 		transform: rotate(360deg);
+	} 
+}
+#scoreBoard aside {
+	margin: 5%;
+	float: left;
+}
+
+#scoreBoard table {
+    border-collapse: collapse;
+}
+
+#scoreBoard td {
+	border: 2px solid black;
+	margin: 0px;
+	text-align: center;
+	padding: 0px 10px;
+}
+
+#reset {
+	display: inline-block;
+	margin-top: 20px;
+	width: 100%;
+}
+
+#winner {	
+	animation: winParty 1s linear infinite;	
+}
+
+@keyframes winParty {
+	0% {
+		color: red;
+		font-size: 100px;
+	}
+	50% {
+		color: blue;
+		font-size: 50px;
+	}
+	100% {
+		color: red;
+		font-size: 100px;
 	} 
 }
 
